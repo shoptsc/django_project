@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--ks^wp7et410b)c%d10fjf5%(z+kkp07^w56(ta0h72&3nfdp#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hamed-crm1.herokuapp.com', '127.0.0.1:8000']
 
 
 # Application definition
@@ -78,17 +78,23 @@ WSGI_APPLICATION = 'crm1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'demo_1',
+#         'USER': 'shoptsc',
+#         'PASSWORD': 'Biodunbiodun*1',
+#         'HOST': 'database-1.cmln61xtfhqq.us-east-1.rds.amazonaws.com',
+#         'PORT': '5432'
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'demo_1',
-        'USER': 'shoptsc',
-        'PASSWORD': 'Biodunbiodun*1',
-        'HOST': 'database-1.cmln61xtfhqq.us-east-1.rds.amazonaws.com',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
